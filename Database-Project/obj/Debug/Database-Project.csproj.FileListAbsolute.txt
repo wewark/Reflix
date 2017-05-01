@@ -1,0 +1,9 @@
+E:\Projects\Database-Project\Database-Project\bin\Debug\Database-Project.exe.config
+E:\Projects\Database-Project\Database-Project\bin\Debug\Database-Project.exe
+E:\Projects\Database-Project\Database-Project\bin\Debug\Database-Project.pdb
+E:\Projects\Database-Project\Database-Project\obj\Debug\Database-Project.csprojResolveAssemblyReference.cache
+E:\Projects\Database-Project\Database-Project\obj\Debug\Database_Project.Form1.resources
+E:\Projects\Database-Project\Database-Project\obj\Debug\Database_Project.Properties.Resources.resources
+E:\Projects\Database-Project\Database-Project\obj\Debug\Database-Project.csproj.GenerateResource.Cache
+E:\Projects\Database-Project\Database-Project\obj\Debug\Database-Project.exe
+E:\Projects\Database-Project\Database-Project\obj\Debug\Database-Project.pdb

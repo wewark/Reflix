@@ -1,6 +1,6 @@
 /*==============================================================*/
 /* DBMS name:      Microsoft SQL Server 2016                    */
-/* Created on:     01/05/2017 10:49:38 AM                       */
+/* Created on:     01/05/2017 11:54:18 AM                       */
 /*==============================================================*/
 
 
@@ -104,9 +104,10 @@ create table MOVIE (
    MOVIE_ID             int                  not null,
    DIRECTOR_ID          int                  not null,
    ADMIN_ID             int                  not null,
-   MOVIE_NAME           varchar(30)          null,
-   MOVIE_YEAR           int                  not null,
+   MOVIE_NAME           varchar(30)          not null,
+   MOVIE_YEAR           int                  null,
    MOVIE_CATEGORY       varchar(20)          null,
+   MOVIE_PRICEPERMONTH  float                not null,
    constraint PK_MOVIE primary key (MOVIE_ID)
 )
 go
