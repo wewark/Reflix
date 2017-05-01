@@ -13,14 +13,14 @@ using Global;
 namespace Database_Project
 {
 
-	public partial class Form1 : Form
+	public partial class LoginForm : Form
 	{
-		public Form1()
+		public LoginForm()
 		{
 			InitializeComponent();
 		}
 
-		private void Form1_Load(object sender, EventArgs e)
+		private void LoginForm_Load(object sender, EventArgs e)
 		{
 			//List<Dictionary<string,object>> res = sql.ReadQuery("select * from ACTS");
 		}
@@ -33,6 +33,13 @@ namespace Database_Project
 		private void button1_Click(object sender, EventArgs e)
 		{
 			// TODO: login
+		}
+
+		private void register_button_Click(object sender, EventArgs e)
+		{
+			// Show registration form
+			RegisterForm regForm = new RegisterForm();
+			regForm.Show();
 		}
 	}
 }
