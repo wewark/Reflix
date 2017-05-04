@@ -32,8 +32,16 @@ namespace Database_Project
 
 		private void button1_Click(object sender, EventArgs e)
 		{
-			// TODO: login
-		}
+           // string pass = sql.readstring($"Select USER.user_password from [USER] where user_username = '{username_textBox.Text}'");
+           // i want to check if the password user entered is the same in my data base 
+            List<Dictionary<string, object>> users = sql.ReadQuery($"SELECT * FROM [USER] WHERE user_username = '{username_textBox.Text}'");
+           // if (users[1])
+           // {
+               // err_msg = "Username already taken";
+                //return false;
+          //  }
+            // TODO: login
+        }
 
 		private void register_button_Click(object sender, EventArgs e)
 		{
