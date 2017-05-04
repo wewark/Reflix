@@ -28,7 +28,7 @@ namespace Database_Project
 		private void login_button_Click(object sender, EventArgs e)
 		{
            // Verify password
-            List<Dictionary<string, object>> users = sql.ReadQuery($"SELECT * FROM [USER] WHERE user_username = '{username_textBox.Text}'");
+            List<Dictionary<string, object>> users = SQL.ReadQuery($"SELECT * FROM [USER] WHERE user_username = '{username_textBox.Text}'");
 
 			err_label.Text = "";
 			// If user not found
@@ -44,7 +44,21 @@ namespace Database_Project
 			// Everything good
 			else
 			{
-				// TODO: load main window
+				Session.userID = (int)users[0]["user_id"];
+				Session.userFirstName = users[0]["user_firstname"].ToString();
+
+				// Hide login window
+				Hide();
+
+				// Load MainWindow
+				MainWindow main = new MainWindow();
+
+				// This line tells MainWindow to close the current window (login window)
+				// with it when it closes, otherwise the application will keep running in
+				// the background with the login window hidden
+				main.FormClosed += (s, args) => Close();
+
+				main.Show();
 			}
         }
 
@@ -53,6 +67,15 @@ namespace Database_Project
 			// Show registration form
 			RegisterForm regForm = new RegisterForm();
 			regForm.Show();
+		}
+
+		private void password_textBox_KeyDown(object sender, KeyEventArgs e)
+		{
+			// If the pressed key is Enter
+			if (e.KeyCode == Keys.Enter)
+			{
+				login_button_Click(this, new EventArgs());
+			}
 		}
 	}
 }

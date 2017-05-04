@@ -8,12 +8,17 @@ using System.Threading.Tasks;
 namespace Global
 {
 	// Holds the current login session
+	/*
+	 * This is a global class to hold the current logged in user data
+	 * to use it across the whole program for the current session
+	 */
 	class Session
 	{
-
+		public static int userID { get; set; }
+		public static string userFirstName { get; set; }
 	}
 
-	class sql
+	class SQL
 	{
 		static public void ChangeQuery(string query)
 		{

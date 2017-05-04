@@ -18,3 +18,5 @@ C:\Users\Refaie\Documents\GitHub\Database-Project\Database-Project\obj\Debug\Dat
 C:\Users\Refaie\Documents\GitHub\Database-Project\Database-Project\obj\Debug\Database-Project.csproj.GenerateResource.Cache
 C:\Users\Refaie\Documents\GitHub\Database-Project\Database-Project\obj\Debug\Database-Project.exe
 C:\Users\Refaie\Documents\GitHub\Database-Project\Database-Project\obj\Debug\Database-Project.pdb
+E:\Projects\Database-Project\Database-Project\obj\Debug\Database_Project.MainWindow.resources
+E:\Projects\Database-Project\Database-Project\obj\Debug\Database_Project.SearchForm.resources
