@@ -25,22 +25,27 @@ namespace Database_Project
 			//List<Dictionary<string,object>> res = sql.ReadQuery("select * from ACTS");
 		}
 
-		private void label1_Click(object sender, EventArgs e)
+		private void login_button_Click(object sender, EventArgs e)
 		{
-			
-		}
-
-		private void button1_Click(object sender, EventArgs e)
-		{
-           // string pass = sql.readstring($"Select USER.user_password from [USER] where user_username = '{username_textBox.Text}'");
-           // i want to check if the password user entered is the same in my data base 
+           // Verify password
             List<Dictionary<string, object>> users = sql.ReadQuery($"SELECT * FROM [USER] WHERE user_username = '{username_textBox.Text}'");
-           // if (users[1])
-           // {
-               // err_msg = "Username already taken";
-                //return false;
-          //  }
-            // TODO: login
+
+			err_label.Text = "";
+			// If user not found
+			if (users.Count == 0)
+			{
+				err_label.Text = "Wrong username";
+			}
+			// If wrong password
+			else if (users[0]["user_password"].ToString() != password_textBox.Text)
+			{
+				err_label.Text = "Wrong password";
+			}
+			// Everything good
+			else
+			{
+				// TODO: load main window
+			}
         }
 
 		private void register_button_Click(object sender, EventArgs e)

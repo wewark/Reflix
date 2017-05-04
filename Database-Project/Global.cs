@@ -17,7 +17,7 @@ namespace Global
 	{
 		static public void ChangeQuery(string query)
 		{
-			SqlConnection sqlConnection = new SqlConnection(@"Data Source = REFAIE\SQLEXPRESS; Initial Catalog = Reflix; Integrated Security = True");
+			SqlConnection sqlConnection = new SqlConnection($"Data Source = {Environment.MachineName}\\SQLEXPRESS; Initial Catalog = Reflix; Integrated Security = True");
 			SqlCommand cmd = new SqlCommand();
 			cmd.Connection = sqlConnection;
 			sqlConnection.Open();
@@ -27,23 +27,11 @@ namespace Global
 
 			sqlConnection.Close();
 		}
-      /*  static public string readstring(string query)
-        {
-            SqlConnection sqlConnection = new SqlConnection(@"Data Source = REFAIE\SQLEXPRESS; Initial Catalog = Reflix; Integrated Security = True");
-            SqlCommand cmd = new SqlCommand();
-            cmd.Connection = sqlConnection;
-            sqlConnection.Open();
-            cmd.CommandText = query;
-            string ret = cmd.ExecuteNonQuery();
-            sqlConnection.Close();
-            return ret;
-        }*/
 		static public List<Dictionary<string, object>> ReadQuery(string query)
 		{
-			SqlConnection sqlConnection = new SqlConnection(@"Data Source = REFAIE\SQLEXPRESS; Initial Catalog = Reflix; Integrated Security = True");
-            
+			SqlConnection sqlConnection = new SqlConnection($"Data Source = {Environment.MachineName}\\SQLEXPRESS; Initial Catalog = Reflix; Integrated Security = True");
 
-            SqlCommand cmd = new SqlCommand();
+			SqlCommand cmd = new SqlCommand();
 			cmd.Connection = sqlConnection;
 			sqlConnection.Open();
 

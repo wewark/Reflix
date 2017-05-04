@@ -67,7 +67,7 @@ namespace Database_Project
 			public void addToDB()
 			{
 				string date = DateTime.Now.ToString();
-				sql.ChangeQuery($"INSERT INTO [USER] VALUES " +
+				sql.ChangeQuery("INSERT INTO [USER] VALUES " +
 					$"('{userName}', '{password}', '{firstName}', '{lastName}', '{email}', '{creditCard}', '{date}')");
 				
 			}
