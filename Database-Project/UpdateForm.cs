@@ -38,15 +38,15 @@ namespace Database_Project
                     return false;
                 }
 
-                List<Dictionary<string, object>> users = SQL.ReadQuery($"SELECT * FROM [USER] WHERE user_username = '{userName}'");
+                List<Dictionary<string, object>> users = SQL.ReadQuery($"SELECT * FROM [USERS] WHERE user_username = '{userName}'");
                 if (users.Count > 0 && userName != Session.username)
                 {
                     err_msg = "Username already taken";
                     return false;
                 }
 
-                users = SQL.ReadQuery($"SELECT * FROM [USER] WHERE user_email = '{email}'");
-                if (users.Count > 0 && email!= Session.email)
+                users = SQL.ReadQuery($"SELECT * FROM [USERS] WHERE user_email = '{email}'");
+                if (users.Count > 0 && email != Session.email)
                 {
                     err_msg = "Email already taken";
                     return false;
@@ -54,8 +54,8 @@ namespace Database_Project
 
                 if (creditCard != "")
                 {
-                    users = SQL.ReadQuery($"SELECT * FROM [USER] WHERE user_creditcard = '{creditCard}'");
-                    if (users.Count > 0 && creditCard!=Session.creditcard)
+                    users = SQL.ReadQuery($"SELECT * FROM [USERS] WHERE user_creditcard = '{creditCard}'");
+                    if (users.Count > 0 && creditCard != Session.creditcard)
                     {
                         err_msg = "Credit Card already taken";
                         return false;
@@ -67,18 +67,46 @@ namespace Database_Project
 
             public void updateDB()
             {
-               
-              //  SQL.ChangeQuery("UPDATE [USER] VALUES " +date da ana shelto, sanyan hwa asln registration date, fa mlosh d3wa bl updata, mashe
-              // yasta ma ana kont hashilo bas enta 2oltelo e3ml commit delw2ty fa wa2ft ya3niwwtvr okaa.y bas 3ash ya zmeeli walaahi
-              /// sho3'l 3alee 
-              /// rabna ya5lilna ramataak
-              // kosom barmgeet visual studio
-              /*
-               * el db el gdeeda, lazm dymn el values, mynf3sh t7otha w 5alas, lazm t7ot esm kol column
-               * b ma3na ?
-               */
-                //    $"('{userName}', '{password}', '{firstName}', '{lastName}', '{email}', '{creditCard}', '{date}')");
 
+                SQL.ChangeQuery($@"UPDATE USERS
+					SET user_username = '{userName}', user_password ='{password}', user_firstname = '{firstName}', user_lastname = '{lastName}', user_email = '{email}',
+                      user_creditcard = '{creditCard}'
+                     WHERE user_id = '{Session.userID}';");
+
+            }
+
+
+        }
+
+        private void update_button_1_Click(object sender, EventArgs e)
+        {
+            if(confirm_textBox1.Text!=password_textBox1.Text)
+            {
+                err.Text= "Password and confirmation don't match";
+                return;
+            }
+
+            User user = new User
+            {
+                firstName = firstName_textBox1.Text,
+                lastName = lastName_textBox1.Text,
+                userName = username_textBox1.Text,
+                password = password_textBox1.Text,
+                email = email_textBox1.Text,
+                creditCard = creditCard_textBox1.Text
+
+            };
+
+            if (user.validate())
+            {
+                user.updateDB();
+                Session.userFirstName = user.firstName;
+                Session.userlastname = user.lastName;
+                Session.username = user.userName;
+                Session.password = user.password;
+                Session.email = user.email;
+                Session.creditcard = user.creditCard;
+                Close();
             }
         }
     }

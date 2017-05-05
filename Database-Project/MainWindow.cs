@@ -33,6 +33,7 @@ namespace Database_Project
         {
             updateForm update = new updateForm();
             update.Show();
+            hello_label.Text = $"Hello, {Session.userFirstName}";
         }
     }
 }
