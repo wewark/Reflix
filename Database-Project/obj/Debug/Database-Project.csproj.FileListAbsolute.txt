@@ -22,3 +22,4 @@ E:\Projects\Database-Project\Database-Project\obj\Debug\Database_Project.MainWin
 E:\Projects\Database-Project\Database-Project\obj\Debug\Database_Project.SearchForm.resources
 C:\Users\Refaie\Documents\GitHub\Database-Project\Database-Project\obj\Debug\Database_Project.MainWindow.resources
 C:\Users\Refaie\Documents\GitHub\Database-Project\Database-Project\obj\Debug\Database_Project.SearchForm.resources
+E:\Projects\Database-Project\Database-Project\bin\Debug\MySql.Data.dll
