@@ -5,7 +5,8 @@
 <Workspace>
 	<Local Expanded="Yes">
 		<Model Expanded="Yes" ID="{0415688B-F8CE-47C7-92C4-0D1BA15D63A5}" Name="ConceptualDataModel_1" Type="{1E597170-9350-11D1-AB3C-0020AF71E433}" URL="ConceptualDataModel_1.cdm"/>
-		<Model Expanded="Yes" ID="{97A69E92-92A4-4A34-BD55-7C6912E63D22}" Name="ConceptualDataModel_3" Selected="Yes" Type="{CDE44E21-9669-11D1-9914-006097355D9B}" URL="ConceptualDataModel_3.pdm"/>
+		<Model Expanded="Yes" ID="{79EA92BD-C512-4D6B-8964-355A2C3A85C4}" Name="ConceptualDataModel_mysql" Selected="Yes" Type="{CDE44E21-9669-11D1-9914-006097355D9B}" URL="ConceptualDataModel_mysql.pdm"/>
+		<Model Expanded="Yes" ID="{A949E821-7AF7-41BC-8324-B2AE8DE9B599}" Name="ConceptualDataModel_MSSQLSERVER" Type="{CDE44E21-9669-11D1-9914-006097355D9B}" URL="ConceptualDataModel_MSSQLSERVER.pdm"/>
 	</Local>
 	<BrowserModule Name="Repository"/>
 </Workspace>

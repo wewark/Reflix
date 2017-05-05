@@ -66,9 +66,10 @@ namespace Database_Project
 			}
 			public void addToDB()
 			{
+				string date = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
 				SQL.ChangeQuery($@"INSERT INTO USERS
 					(user_username, user_password, user_firstname, user_lastname, user_email, user_creditcard, user_regdate)
-					VALUES ('{userName}', '{password}', '{firstName}', '{lastName}', '{email}', '{creditCard}', '2000-1-1 01:01:01')"
+					VALUES ('{userName}', '{password}', '{firstName}', '{lastName}', '{email}', '{creditCard}', '{date}')"
 				);
 
 			}

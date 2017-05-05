@@ -1,6 +1,6 @@
 /*==============================================================*/
 /* DBMS name:      MySQL 5.0                                    */
-/* Created on:     05/05/2017 6:51:18 PM                        */
+/* Created on:     05/05/2017 8:32:18 PM                        */
 /*==============================================================*/
 
 
@@ -16,7 +16,7 @@ drop table if exists MOVIE;
 
 drop table if exists RENT;
 
-drop table if exists USER;
+drop table if exists USERS;
 
 /*==============================================================*/
 /* Table: ACTOR                                                 */
@@ -89,9 +89,9 @@ create table RENT
 );
 
 /*==============================================================*/
-/* Table: USER                                                  */
+/* Table: USERS                                                 */
 /*==============================================================*/
-create table USER
+create table USERS
 (
    user_id              int not null auto_increment,
    user_username        varchar(20) not null,
@@ -117,7 +117,7 @@ alter table MOVIE add constraint FK_DIRECT foreign key (director_id)
       references DIRECTOR (director_id) on delete restrict on update restrict;
 
 alter table RENT add constraint FK_RENTED foreign key (user_id)
-      references USER (user_id) on delete restrict on update restrict;
+      references USERS (user_id) on delete restrict on update restrict;
 
 alter table RENT add constraint FK_RENTS foreign key (movie_id)
       references MOVIE (movie_id) on delete restrict on update restrict;
