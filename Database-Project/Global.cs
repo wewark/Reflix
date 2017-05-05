@@ -16,6 +16,16 @@ namespace Global
 	{
 		public static int userID { get; set; }
 		public static string userFirstName { get; set; }
+
+        public static string username { get; set; }
+
+        public static string password { get; set; }
+
+        public static string userlastname { get; set; }
+
+        public static string email { get; set; }
+
+        public static string creditcard { get; set; }
 	}
 
 	class SQL

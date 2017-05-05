@@ -28,5 +28,11 @@ namespace Database_Project
 			SearchForm search = new SearchForm();
 			search.Show();
 		}
-	}
+
+        private void update_button_Click(object sender, EventArgs e)
+        {
+            updateForm update = new updateForm();
+            update.Show();
+        }
+    }
 }

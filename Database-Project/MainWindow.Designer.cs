@@ -68,6 +68,7 @@
             this.update_button.TabIndex = 2;
             this.update_button.Text = "Update your data";
             this.update_button.UseVisualStyleBackColor = true;
+            this.update_button.Click += new System.EventHandler(this.update_button_Click);
             // 
             // view_button
             // 

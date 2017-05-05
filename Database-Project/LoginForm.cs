@@ -46,6 +46,11 @@ namespace Database_Project
 			{
 				Session.userID = (int)users[0]["user_id"];
 				Session.userFirstName = users[0]["user_firstname"].ToString();
+                Session.username = users[0]["user_username"].ToString();
+                Session.password = users[0]["user_password"].ToString();
+                Session.userlastname = users[0]["user_lastname"].ToString();
+                Session.email = users[0]["user_email"].ToString();
+                Session.creditcard = users[0]["user_creditcard"].ToString();
 
 				// Hide login window
 				Hide();
