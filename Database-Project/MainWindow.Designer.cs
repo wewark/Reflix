@@ -28,42 +28,113 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.hello_label = new System.Windows.Forms.Label();
-			this.search_button = new System.Windows.Forms.Button();
-			this.SuspendLayout();
-			// 
-			// hello_label
-			// 
-			this.hello_label.AutoSize = true;
-			this.hello_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.hello_label.Location = new System.Drawing.Point(33, 26);
-			this.hello_label.Name = "hello_label";
-			this.hello_label.Size = new System.Drawing.Size(69, 24);
-			this.hello_label.TabIndex = 0;
-			this.hello_label.Text = "Hello,  ";
-			// 
-			// search_button
-			// 
-			this.search_button.Location = new System.Drawing.Point(12, 255);
-			this.search_button.Name = "search_button";
-			this.search_button.Size = new System.Drawing.Size(114, 64);
-			this.search_button.TabIndex = 1;
-			this.search_button.Text = "Search";
-			this.search_button.UseVisualStyleBackColor = true;
-			this.search_button.Click += new System.EventHandler(this.search_button_Click);
-			// 
-			// MainWindow
-			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(425, 331);
-			this.Controls.Add(this.search_button);
-			this.Controls.Add(this.hello_label);
-			this.Name = "MainWindow";
-			this.Text = "MainWindow";
-			this.Load += new System.EventHandler(this.MainWindow_Load);
-			this.ResumeLayout(false);
-			this.PerformLayout();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
+            this.hello_label = new System.Windows.Forms.Label();
+            this.search_button = new System.Windows.Forms.Button();
+            this.update_button = new System.Windows.Forms.Button();
+            this.view_button = new System.Windows.Forms.Button();
+            this.rent_button = new System.Windows.Forms.Button();
+            this.return_button = new System.Windows.Forms.Button();
+            this.extend_button = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // hello_label
+            // 
+            this.hello_label.AutoSize = true;
+            this.hello_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hello_label.Location = new System.Drawing.Point(33, 26);
+            this.hello_label.Name = "hello_label";
+            this.hello_label.Size = new System.Drawing.Size(69, 24);
+            this.hello_label.TabIndex = 0;
+            this.hello_label.Text = "Hello,  ";
+            // 
+            // search_button
+            // 
+            this.search_button.Location = new System.Drawing.Point(37, 74);
+            this.search_button.Name = "search_button";
+            this.search_button.Size = new System.Drawing.Size(108, 40);
+            this.search_button.TabIndex = 1;
+            this.search_button.Text = "Search";
+            this.search_button.UseVisualStyleBackColor = true;
+            this.search_button.Click += new System.EventHandler(this.search_button_Click);
+            // 
+            // update_button
+            // 
+            this.update_button.Location = new System.Drawing.Point(163, 74);
+            this.update_button.Name = "update_button";
+            this.update_button.Size = new System.Drawing.Size(108, 40);
+            this.update_button.TabIndex = 2;
+            this.update_button.Text = "Update your data";
+            this.update_button.UseVisualStyleBackColor = true;
+            // 
+            // view_button
+            // 
+            this.view_button.Location = new System.Drawing.Point(37, 120);
+            this.view_button.Name = "view_button";
+            this.view_button.Size = new System.Drawing.Size(108, 40);
+            this.view_button.TabIndex = 3;
+            this.view_button.Text = "View The Movies ";
+            this.view_button.UseVisualStyleBackColor = true;
+            // 
+            // rent_button
+            // 
+            this.rent_button.Location = new System.Drawing.Point(163, 120);
+            this.rent_button.Name = "rent_button";
+            this.rent_button.Size = new System.Drawing.Size(108, 40);
+            this.rent_button.TabIndex = 4;
+            this.rent_button.Text = "Rent";
+            this.rent_button.UseVisualStyleBackColor = true;
+            // 
+            // return_button
+            // 
+            this.return_button.Location = new System.Drawing.Point(37, 166);
+            this.return_button.Name = "return_button";
+            this.return_button.Size = new System.Drawing.Size(108, 40);
+            this.return_button.TabIndex = 5;
+            this.return_button.Text = "Return";
+            this.return_button.UseVisualStyleBackColor = true;
+            // 
+            // extend_button
+            // 
+            this.extend_button.Location = new System.Drawing.Point(163, 166);
+            this.extend_button.Name = "extend_button";
+            this.extend_button.Size = new System.Drawing.Size(108, 40);
+            this.extend_button.TabIndex = 6;
+            this.extend_button.Text = "Extend ";
+            this.extend_button.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(60, 197);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(180, 180);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
+            // 
+            // MainWindow
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(305, 324);
+            this.Controls.Add(this.extend_button);
+            this.Controls.Add(this.return_button);
+            this.Controls.Add(this.rent_button);
+            this.Controls.Add(this.view_button);
+            this.Controls.Add(this.update_button);
+            this.Controls.Add(this.search_button);
+            this.Controls.Add(this.hello_label);
+            this.Controls.Add(this.pictureBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "MainWindow";
+            this.Text = "Main Window";
+            this.Load += new System.EventHandler(this.MainWindow_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
 
 		}
 
@@ -71,5 +142,11 @@
 
 		private System.Windows.Forms.Label hello_label;
 		private System.Windows.Forms.Button search_button;
-	}
+        private System.Windows.Forms.Button update_button;
+        private System.Windows.Forms.Button view_button;
+        private System.Windows.Forms.Button rent_button;
+        private System.Windows.Forms.Button return_button;
+        private System.Windows.Forms.Button extend_button;
+        private System.Windows.Forms.PictureBox pictureBox1;
+    }
 }
