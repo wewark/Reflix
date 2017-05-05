@@ -22,7 +22,7 @@ namespace Database_Project
 
 		private void LoginForm_Load(object sender, EventArgs e)
 		{
-			//List<Dictionary<string,object>> res = sql.ReadQuery("select * from ACTS");
+			err_label.Text = "";
 		}
 
 		private void login_button_Click(object sender, EventArgs e)
@@ -79,36 +79,6 @@ namespace Database_Project
 		}
 
         private void admin_button_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void err_label_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void password_textBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void username_textBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
         {
 
         }

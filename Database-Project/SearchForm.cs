@@ -48,6 +48,7 @@ namespace Database_Project
 			{
 				addRow(movie);
 			}
+			result_tableLayoutPanel.RowCount++;
 		}
 
 		// Adds a movie to the results table
