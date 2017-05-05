@@ -7,13 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using Global;
 
 namespace Database_Project
@@ -75,8 +68,16 @@ namespace Database_Project
             public void updateDB()
             {
                
-                SQL.ChangeQuery("UPDATE [USER] VALUES " +
-                    $"('{userName}', '{password}', '{firstName}', '{lastName}', '{email}', '{creditCard}', '{date}')");
+              //  SQL.ChangeQuery("UPDATE [USER] VALUES " +date da ana shelto, sanyan hwa asln registration date, fa mlosh d3wa bl updata, mashe
+              // yasta ma ana kont hashilo bas enta 2oltelo e3ml commit delw2ty fa wa2ft ya3niwwtvr okaa.y bas 3ash ya zmeeli walaahi
+              /// sho3'l 3alee 
+              /// rabna ya5lilna ramataak
+              // kosom barmgeet visual studio
+              /*
+               * el db el gdeeda, lazm dymn el values, mynf3sh t7otha w 5alas, lazm t7ot esm kol column
+               * b ma3na ?
+               */
+                //    $"('{userName}', '{password}', '{firstName}', '{lastName}', '{email}', '{creditCard}', '{date}')");
 
             }
         }

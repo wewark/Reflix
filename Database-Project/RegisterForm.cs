@@ -38,14 +38,14 @@ namespace Database_Project
 					return false;
 				}
 
-				List<Dictionary<string, object>> users = SQL.ReadQuery($"SELECT * FROM USER WHERE user_username = '{userName}'");
+				List<Dictionary<string, object>> users = SQL.ReadQuery($"SELECT * FROM USERS WHERE user_username = '{userName}'");
 				if (users.Count > 0)
 				{
 					err_msg = "Username already taken";
 					return false;
 				}
 
-				users = SQL.ReadQuery($"SELECT * FROM USER WHERE user_email = '{email}'");
+				users = SQL.ReadQuery($"SELECT * FROM USERS WHERE user_email = '{email}'");
 				if (users.Count > 0)
 				{
 					err_msg = "Email already taken";
@@ -54,7 +54,7 @@ namespace Database_Project
 
 				if (creditCard != "")
 				{
-					users = SQL.ReadQuery($"SELECT * FROM USER WHERE user_creditcard = '{creditCard}'");
+					users = SQL.ReadQuery($"SELECT * FROM USERS WHERE user_creditcard = '{creditCard}'");
 					if (users.Count > 0)
 					{
 						err_msg = "Credit Card already taken";
@@ -66,9 +66,9 @@ namespace Database_Project
 			}
 			public void addToDB()
 			{
-				SQL.ChangeQuery($@"INSERT INTO USER
+				SQL.ChangeQuery($@"INSERT INTO USERS
 					(user_username, user_password, user_firstname, user_lastname, user_email, user_creditcard, user_regdate)
-					VALUES ('{userName}', '{password}', '{firstName}', '{lastName}', '{email}', '{creditCard}', NOW())"
+					VALUES ('{userName}', '{password}', '{firstName}', '{lastName}', '{email}', '{creditCard}', '2000-1-1 01:01:01')"
 				);
 
 			}
