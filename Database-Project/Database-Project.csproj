@@ -75,6 +75,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ReflixDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="reflixDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>reflixDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="RegisterForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -139,6 +144,9 @@
     <EmbeddedResource Include="UpdateForm.resx">
       <DependentUpon>UpdateForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ViewForm.resx">
+      <DependentUpon>ViewForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -159,6 +167,17 @@
     </None>
     <None Include="ReflixDataSet.xss">
       <DependentUpon>ReflixDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="reflixDataSet1.xsc">
+      <DependentUpon>reflixDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="reflixDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>reflixDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="reflixDataSet1.xss">
+      <DependentUpon>reflixDataSet1.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

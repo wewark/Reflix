@@ -35,5 +35,11 @@ namespace Database_Project
             update.Show();
             hello_label.Text = $"Hello, {Session.userFirstName}";
         }
+
+        private void view_button_Click(object sender, EventArgs e)
+        {
+            ViewForm view = new ViewForm();
+            view.Show();
+        }
     }
 }

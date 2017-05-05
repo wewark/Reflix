@@ -78,6 +78,7 @@
             this.view_button.TabIndex = 3;
             this.view_button.Text = "View The Movies ";
             this.view_button.UseVisualStyleBackColor = true;
+            this.view_button.Click += new System.EventHandler(this.view_button_Click);
             // 
             // rent_button
             // 

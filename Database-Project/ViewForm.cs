@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Global;
 
 namespace Database_Project
 {
@@ -16,5 +17,11 @@ namespace Database_Project
 		{
 			InitializeComponent();
 		}
-	}
+
+        private void ViewForm_Load(object sender, EventArgs e)
+        {
+            
+
+        }
+    }
 }

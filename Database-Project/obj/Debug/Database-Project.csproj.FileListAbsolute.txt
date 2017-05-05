@@ -27,3 +27,4 @@ C:\Users\Refaie\Documents\GitHub\Database-Project\Database-Project\obj\Debug\Dat
 =======
 E:\Projects\Database-Project\Database-Project\bin\Debug\MySql.Data.dll
 C:\Users\Refaie\Documents\GitHub\Database-Project\Database-Project\bin\Debug\MySql.Data.dll
+C:\Users\Refaie\Documents\GitHub\Database-Project\Database-Project\obj\Debug\Database_Project.ViewForm.resources
