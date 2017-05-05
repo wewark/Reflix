@@ -28,7 +28,7 @@ namespace Database_Project
 		private void login_button_Click(object sender, EventArgs e)
 		{
            // Verify password
-            List<Dictionary<string, object>> users = SQL.ReadQuery($"SELECT * FROM [USER] WHERE user_username = '{username_textBox.Text}'");
+            List<Dictionary<string, object>> users = SQL.ReadQuery($"SELECT * FROM USER WHERE user_username = '{username_textBox.Text}'");
 
 			err_label.Text = "";
 			// If user not found

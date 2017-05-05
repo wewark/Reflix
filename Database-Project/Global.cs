@@ -4,6 +4,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MySql.Data.MySqlClient;
 
 namespace Global
 {
@@ -32,8 +33,10 @@ namespace Global
 	{
 		static public void ChangeQuery(string query)
 		{
-			SqlConnection sqlConnection = new SqlConnection($"Data Source = {Environment.MachineName}\\SQLEXPRESS; Initial Catalog = Reflix; Integrated Security = True");
-			SqlCommand cmd = new SqlCommand();
+			//SqlConnection sqlConnection = new SqlConnection($"Data Source = {Environment.MachineName}\\SQLEXPRESS; Initial Catalog = Reflix; Integrated Security = True");
+			MySqlConnection sqlConnection = new MySqlConnection($@"user id=root;password=root;server=wewark.ddns.net;port=3306;database=reflix");
+
+			MySqlCommand cmd = new MySqlCommand();
 			cmd.Connection = sqlConnection;
 			sqlConnection.Open();
 
@@ -44,14 +47,15 @@ namespace Global
 		}
 		static public List<Dictionary<string, object>> ReadQuery(string query)
 		{
-			SqlConnection sqlConnection = new SqlConnection($"Data Source = {Environment.MachineName}\\SQLEXPRESS; Initial Catalog = Reflix; Integrated Security = True");
+			//SqlConnection sqlConnection = new SqlConnection($"Data Source = {Environment.MachineName}\\SQLEXPRESS; Initial Catalog = Reflix; Integrated Security = True");
+			MySqlConnection sqlConnection = new MySqlConnection($@"user id=root;password=root;server=wewark.ddns.net;port=3306;database=reflix");
 
-			SqlCommand cmd = new SqlCommand();
+			MySqlCommand cmd = new MySqlCommand();
 			cmd.Connection = sqlConnection;
 			sqlConnection.Open();
 
 			cmd.CommandText = query;
-			SqlDataReader reader = cmd.ExecuteReader();
+			MySqlDataReader reader = cmd.ExecuteReader();
 
 			// Dictionary is like C++ map
 			// List is a dynamic array (like vector)
