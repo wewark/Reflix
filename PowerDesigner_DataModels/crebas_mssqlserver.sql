@@ -1,6 +1,6 @@
 /*==============================================================*/
 /* DBMS name:      Microsoft SQL Server 2016                    */
-/* Created on:     05/05/2017 8:19:17 PM                        */
+/* Created on:     06/05/2017 9:40:20 PM                        */
 /*==============================================================*/
 
 
@@ -109,6 +109,7 @@ create table MOVIE (
    movie_year           int                  null,
    movie_category       varchar(20)          null,
    movie_pricepermonth  float                not null,
+   cds_avail            int                  null,
    constraint PK_MOVIE primary key (movie_id)
 )
 go
@@ -119,6 +120,8 @@ go
 create table RENT (
    user_id              int                  not null,
    movie_id             int                  not null,
+   start_date           datetime             null,
+   end_date             datetime             null,
    constraint PK_RENT primary key (user_id, movie_id)
 )
 go
@@ -134,6 +137,7 @@ create table USERS (
    user_lastname        varchar(30)          null,
    user_email           varchar(50)          not null,
    user_creditcard      varchar(16)          null,
+   user_balance         float                null,
    user_regdate         datetime             not null,
    constraint PK_USERS primary key (user_id)
 )

@@ -51,6 +51,7 @@ namespace Database_Project
                 Session.userlastname = users[0]["user_lastname"].ToString();
                 Session.email = users[0]["user_email"].ToString();
                 Session.creditcard = users[0]["user_creditcard"].ToString();
+				Session.userBalance = (double)users[0]["user_balance"];
 
 				// Hide login window
 				Hide();

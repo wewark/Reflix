@@ -31,8 +31,8 @@ namespace Database_Project
 			 */
 
 			string searchQuery = search_textBox.Text;
-			var movies = SQL.ReadQuery($@"
-				select distinct movie_name, movie_year, director_name
+			movies = SQL.ReadQuery($@"
+				select distinct movie.movie_id, movie_name, movie_year, director_name, movie_pricepermonth
 				from MOVIE
 					join DIRECTOR on MOVIE.director_id = DIRECTOR.director_id
 					join ACTS on MOVIE.movie_id = ACTS.movie_id
@@ -42,38 +42,40 @@ namespace Database_Project
 					actor_name like '%{searchQuery}%' or
 					director_name like '%{searchQuery}%'
 			");
-
+			
 			// Show results in the table
 			foreach (var movie in movies)
 			{
 				addRow(movie);
 			}
-			result_tableLayoutPanel.RowCount++;
 		}
+
+		private static List<Dictionary<string, object>> movies;
 
 		// Adds a movie to the results table
 		private void addRow(Dictionary<string, object> movie)
 		{
-			result_tableLayoutPanel.RowCount++;
-			result_tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 30));
+			string[] movieData = new string[2] { movie["movie_name"].ToString(), movie["movie_year"].ToString() };
+			result_listView.Items.Add(new ListViewItem(movieData));
+		}
 
-			result_tableLayoutPanel.Controls.Add(new Label() {
-				Text = movie["movie_name"].ToString(),
-				TextAlign = ContentAlignment.MiddleCenter,
-				Anchor = (AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right)
-			}, 0, result_tableLayoutPanel.RowCount - 1);
+		private void rent_button_Click(object sender, EventArgs e)
+		{
+			for (int i = 0; i < movies.Count; i++)
+			{
+				if (result_listView.Items[i].Checked)
+					rentMovie(movies[i]);
+			}
+		}
+		private void rentMovie(Dictionary<string, object> movie)
+		{
+			// Add the operation to RENT relation
+			SQL.ChangeQuery($@"insert into RENT values
+				({Session.userID}, {movie["movie_id"]}, {DateTime.Now.ToString("yyyy-MM-dd")}, {DateTime.Now.AddMonths(1).ToString("yyyy-MM-dd")})");
 
-			result_tableLayoutPanel.Controls.Add(new Label() {
-				Text = movie["movie_year"].ToString(),
-				TextAlign = ContentAlignment.MiddleCenter,
-				Anchor = (AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right)
-			}, 1, result_tableLayoutPanel.RowCount - 1);
-
-			result_tableLayoutPanel.Controls.Add(new Label() {
-				Text = movie["director_name"].ToString(),
-				TextAlign = ContentAlignment.MiddleCenter,
-				Anchor = (AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right)
-			}, 2, result_tableLayoutPanel.RowCount - 1);
+			// Take the money
+			Session.userBalance -= (double)movie["movie_pricepermonth"];
+			SQL.ChangeQuery($@"update USERS set user_balance = {Session.userBalance} where user_id = {Session.userID}");
 		}
 	}
 }

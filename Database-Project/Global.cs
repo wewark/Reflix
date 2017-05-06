@@ -27,6 +27,7 @@ namespace Global
         public static string email { get; set; }
 
         public static string creditcard { get; set; }
+		public static double userBalance { get; set; }
 	}
 
 	class SQL
