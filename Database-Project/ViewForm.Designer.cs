@@ -31,27 +31,30 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewForm));
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.mOVIEBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
+            this.reflixDataSet1 = new Database_Project.reflixDataSet1();
+            this.mOVIEBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.mOVIEBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.reflixDataSet = new Database_Project.ReflixDataSet();
             this.mOVIETableAdapter = new Database_Project.ReflixDataSetTableAdapters.MOVIETableAdapter();
-            this.reflixDataSet1 = new Database_Project.reflixDataSet1();
             this.mOVIEBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.mOVIETableAdapter1 = new Database_Project.reflixDataSet1TableAdapters.MOVIETableAdapter();
-            this.movieidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.directoridDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.adminidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.movienameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.movieyearDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.moviecategoryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.moviepricepermonthDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mOVIEBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.uSERSBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.uSERSTableAdapter = new Database_Project.reflixDataSet1TableAdapters.USERSTableAdapter();
+            this.tableAdapterManager = new Database_Project.ReflixDataSetTableAdapters.TableAdapterManager();
+            this.tableAdapterManager1 = new Database_Project.reflixDataSet1TableAdapters.TableAdapterManager();
+            this.result_listView = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.label1 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.mOVIEBindingSource3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reflixDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mOVIEBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mOVIEBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.reflixDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.reflixDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mOVIEBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mOVIEBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uSERSBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // contextMenuStrip1
@@ -59,23 +62,20 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // dataGridView1
+            // mOVIEBindingSource3
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.movieidDataGridViewTextBoxColumn,
-            this.directoridDataGridViewTextBoxColumn,
-            this.adminidDataGridViewTextBoxColumn,
-            this.movienameDataGridViewTextBoxColumn,
-            this.movieyearDataGridViewTextBoxColumn,
-            this.moviecategoryDataGridViewTextBoxColumn,
-            this.moviepricepermonthDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.mOVIEBindingSource2;
-            this.dataGridView1.Location = new System.Drawing.Point(31, 36);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(744, 386);
-            this.dataGridView1.TabIndex = 1;
+            this.mOVIEBindingSource3.DataMember = "MOVIE";
+            this.mOVIEBindingSource3.DataSource = this.reflixDataSet1;
+            // 
+            // reflixDataSet1
+            // 
+            this.reflixDataSet1.DataSetName = "reflixDataSet1";
+            this.reflixDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // mOVIEBindingSource2
+            // 
+            this.mOVIEBindingSource2.DataMember = "MOVIE";
+            this.mOVIEBindingSource2.DataSource = this.reflixDataSet1;
             // 
             // mOVIEBindingSource
             // 
@@ -91,11 +91,6 @@
             // 
             this.mOVIETableAdapter.ClearBeforeFill = true;
             // 
-            // reflixDataSet1
-            // 
-            this.reflixDataSet1.DataSetName = "reflixDataSet1";
-            this.reflixDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // mOVIEBindingSource1
             // 
             this.mOVIEBindingSource1.DataMember = "MOVIE";
@@ -105,90 +100,121 @@
             // 
             this.mOVIETableAdapter1.ClearBeforeFill = true;
             // 
-            // movieidDataGridViewTextBoxColumn
+            // uSERSBindingSource
             // 
-            this.movieidDataGridViewTextBoxColumn.DataPropertyName = "movie_id";
-            this.movieidDataGridViewTextBoxColumn.HeaderText = "movie_id";
-            this.movieidDataGridViewTextBoxColumn.Name = "movieidDataGridViewTextBoxColumn";
-            this.movieidDataGridViewTextBoxColumn.ReadOnly = true;
+            this.uSERSBindingSource.DataMember = "USERS";
+            this.uSERSBindingSource.DataSource = this.reflixDataSet1;
             // 
-            // directoridDataGridViewTextBoxColumn
+            // uSERSTableAdapter
             // 
-            this.directoridDataGridViewTextBoxColumn.DataPropertyName = "director_id";
-            this.directoridDataGridViewTextBoxColumn.HeaderText = "director_id";
-            this.directoridDataGridViewTextBoxColumn.Name = "directoridDataGridViewTextBoxColumn";
+            this.uSERSTableAdapter.ClearBeforeFill = true;
             // 
-            // adminidDataGridViewTextBoxColumn
+            // tableAdapterManager
             // 
-            this.adminidDataGridViewTextBoxColumn.DataPropertyName = "admin_id";
-            this.adminidDataGridViewTextBoxColumn.HeaderText = "admin_id";
-            this.adminidDataGridViewTextBoxColumn.Name = "adminidDataGridViewTextBoxColumn";
+            this.tableAdapterManager.ACTORTableAdapter = null;
+            this.tableAdapterManager.ACTSTableAdapter = null;
+            this.tableAdapterManager.ADMINTableAdapter = null;
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.DIRECTORTableAdapter = null;
+            this.tableAdapterManager.MOVIETableAdapter = this.mOVIETableAdapter;
+            this.tableAdapterManager.RENTTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = Database_Project.ReflixDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.USERTableAdapter = null;
             // 
-            // movienameDataGridViewTextBoxColumn
+            // tableAdapterManager1
             // 
-            this.movienameDataGridViewTextBoxColumn.DataPropertyName = "movie_name";
-            this.movienameDataGridViewTextBoxColumn.HeaderText = "movie_name";
-            this.movienameDataGridViewTextBoxColumn.Name = "movienameDataGridViewTextBoxColumn";
+            this.tableAdapterManager1.ACTORTableAdapter = null;
+            this.tableAdapterManager1.ACTSTableAdapter = null;
+            this.tableAdapterManager1.ADMINTableAdapter = null;
+            this.tableAdapterManager1.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager1.DIRECTORTableAdapter = null;
+            this.tableAdapterManager1.MOVIETableAdapter = this.mOVIETableAdapter1;
+            this.tableAdapterManager1.RENTTableAdapter = null;
+            this.tableAdapterManager1.UpdateOrder = Database_Project.reflixDataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager1.USERSTableAdapter = this.uSERSTableAdapter;
             // 
-            // movieyearDataGridViewTextBoxColumn
+            // result_listView
             // 
-            this.movieyearDataGridViewTextBoxColumn.DataPropertyName = "movie_year";
-            this.movieyearDataGridViewTextBoxColumn.HeaderText = "movie_year";
-            this.movieyearDataGridViewTextBoxColumn.Name = "movieyearDataGridViewTextBoxColumn";
+            this.result_listView.CheckBoxes = true;
+            this.result_listView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3});
+            this.result_listView.FullRowSelect = true;
+            this.result_listView.GridLines = true;
+            this.result_listView.Location = new System.Drawing.Point(26, 65);
+            this.result_listView.Name = "result_listView";
+            this.result_listView.Size = new System.Drawing.Size(416, 442);
+            this.result_listView.TabIndex = 4;
+            this.result_listView.UseCompatibleStateImageBehavior = false;
+            this.result_listView.View = System.Windows.Forms.View.Details;
             // 
-            // moviecategoryDataGridViewTextBoxColumn
+            // columnHeader1
             // 
-            this.moviecategoryDataGridViewTextBoxColumn.DataPropertyName = "movie_category";
-            this.moviecategoryDataGridViewTextBoxColumn.HeaderText = "movie_category";
-            this.moviecategoryDataGridViewTextBoxColumn.Name = "moviecategoryDataGridViewTextBoxColumn";
+            this.columnHeader1.Text = "Name";
+            this.columnHeader1.Width = 144;
             // 
-            // moviepricepermonthDataGridViewTextBoxColumn
+            // columnHeader2
             // 
-            this.moviepricepermonthDataGridViewTextBoxColumn.DataPropertyName = "movie_pricepermonth";
-            this.moviepricepermonthDataGridViewTextBoxColumn.HeaderText = "movie_pricepermonth";
-            this.moviepricepermonthDataGridViewTextBoxColumn.Name = "moviepricepermonthDataGridViewTextBoxColumn";
+            this.columnHeader2.Text = "Year";
+            this.columnHeader2.Width = 130;
             // 
-            // mOVIEBindingSource2
+            // columnHeader3
             // 
-            this.mOVIEBindingSource2.DataMember = "MOVIE";
-            this.mOVIEBindingSource2.DataSource = this.reflixDataSet1;
+            this.columnHeader3.Text = "Director";
+            this.columnHeader3.Width = 138;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(20, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(106, 31);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Movies";
             // 
             // ViewForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(813, 471);
-            this.Controls.Add(this.dataGridView1);
+            this.ClientSize = new System.Drawing.Size(470, 535);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.result_listView);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ViewForm";
             this.Load += new System.EventHandler(this.ViewForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mOVIEBindingSource3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reflixDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mOVIEBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mOVIEBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.reflixDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.reflixDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mOVIEBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mOVIEBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uSERSBindingSource)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
 		}
 
         #endregion
 
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private ReflixDataSet reflixDataSet;
         private System.Windows.Forms.BindingSource mOVIEBindingSource;
         private ReflixDataSetTableAdapters.MOVIETableAdapter mOVIETableAdapter;
         private reflixDataSet1 reflixDataSet1;
         private System.Windows.Forms.BindingSource mOVIEBindingSource1;
         private reflixDataSet1TableAdapters.MOVIETableAdapter mOVIETableAdapter1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn movieidDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn directoridDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn adminidDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn movienameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn movieyearDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn moviecategoryDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn moviepricepermonthDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource mOVIEBindingSource2;
+        private System.Windows.Forms.BindingSource uSERSBindingSource;
+        private reflixDataSet1TableAdapters.USERSTableAdapter uSERSTableAdapter;
+        private System.Windows.Forms.BindingSource mOVIEBindingSource3;
+        private ReflixDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private reflixDataSet1TableAdapters.TableAdapterManager tableAdapterManager1;
+        private System.Windows.Forms.ListView result_listView;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.Label label1;
     }
 }

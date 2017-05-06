@@ -138,6 +138,9 @@
     <EmbeddedResource Include="RentForm.resx">
       <DependentUpon>RentForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReturnForm.resx">
+      <DependentUpon>ReturnForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SearchForm.resx">
       <DependentUpon>SearchForm.cs</DependentUpon>
     </EmbeddedResource>

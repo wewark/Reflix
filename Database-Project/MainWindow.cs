@@ -41,5 +41,11 @@ namespace Database_Project
             ViewForm view = new ViewForm();
             view.Show();
         }
+
+        private void return_button_Click(object sender, EventArgs e)
+        {
+            ReturnForm ret = new ReturnForm();
+            ret.Show();
+        }
     }
 }

@@ -33,7 +33,6 @@
             this.search_button = new System.Windows.Forms.Button();
             this.update_button = new System.Windows.Forms.Button();
             this.view_button = new System.Windows.Forms.Button();
-            this.rent_button = new System.Windows.Forms.Button();
             this.return_button = new System.Windows.Forms.Button();
             this.extend_button = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -56,7 +55,7 @@
             this.search_button.Name = "search_button";
             this.search_button.Size = new System.Drawing.Size(108, 40);
             this.search_button.TabIndex = 1;
-            this.search_button.Text = "Search";
+            this.search_button.Text = "Search and Rent";
             this.search_button.UseVisualStyleBackColor = true;
             this.search_button.Click += new System.EventHandler(this.search_button_Click);
             // 
@@ -80,27 +79,19 @@
             this.view_button.UseVisualStyleBackColor = true;
             this.view_button.Click += new System.EventHandler(this.view_button_Click);
             // 
-            // rent_button
-            // 
-            this.rent_button.Location = new System.Drawing.Point(163, 120);
-            this.rent_button.Name = "rent_button";
-            this.rent_button.Size = new System.Drawing.Size(108, 40);
-            this.rent_button.TabIndex = 4;
-            this.rent_button.Text = "Rent";
-            this.rent_button.UseVisualStyleBackColor = true;
-            // 
             // return_button
             // 
-            this.return_button.Location = new System.Drawing.Point(37, 166);
+            this.return_button.Location = new System.Drawing.Point(163, 120);
             this.return_button.Name = "return_button";
             this.return_button.Size = new System.Drawing.Size(108, 40);
             this.return_button.TabIndex = 5;
-            this.return_button.Text = "Return";
+            this.return_button.Text = "Rented and Return";
             this.return_button.UseVisualStyleBackColor = true;
+            this.return_button.Click += new System.EventHandler(this.return_button_Click);
             // 
             // extend_button
             // 
-            this.extend_button.Location = new System.Drawing.Point(163, 166);
+            this.extend_button.Location = new System.Drawing.Point(101, 169);
             this.extend_button.Name = "extend_button";
             this.extend_button.Size = new System.Drawing.Size(108, 40);
             this.extend_button.TabIndex = 6;
@@ -124,7 +115,6 @@
             this.ClientSize = new System.Drawing.Size(305, 324);
             this.Controls.Add(this.extend_button);
             this.Controls.Add(this.return_button);
-            this.Controls.Add(this.rent_button);
             this.Controls.Add(this.view_button);
             this.Controls.Add(this.update_button);
             this.Controls.Add(this.search_button);
@@ -146,7 +136,6 @@
 		private System.Windows.Forms.Button search_button;
         private System.Windows.Forms.Button update_button;
         private System.Windows.Forms.Button view_button;
-        private System.Windows.Forms.Button rent_button;
         private System.Windows.Forms.Button return_button;
         private System.Windows.Forms.Button extend_button;
         private System.Windows.Forms.PictureBox pictureBox1;

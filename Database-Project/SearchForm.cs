@@ -73,9 +73,17 @@ namespace Database_Project
 			SQL.ChangeQuery($@"insert into RENT values
 				({Session.userID}, {movie["movie_id"]}, {DateTime.Now.ToString("yyyy-MM-dd")}, {DateTime.Now.AddMonths(1).ToString("yyyy-MM-dd")})");
 
-			// Take the money
-			Session.userBalance -= (double)movie["movie_pricepermonth"];
-			SQL.ChangeQuery($@"update USERS set user_balance = {Session.userBalance} where user_id = {Session.userID}");
+            if (Session.userBalance >= (double)movie["movie_pricepermonth"])
+            {
+                // Take the money
+                Session.userBalance -= (double)movie["movie_pricepermonth"];
+                SQL.ChangeQuery($@"update USERS set user_balance = {Session.userBalance} where user_id = {Session.userID}");
+            }
+
+            else
+            {
+                balance_err.Text ="You can't rent this movie , your balance is not enough";
+            }
 		}
 	}
 }
