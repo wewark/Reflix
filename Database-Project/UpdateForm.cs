@@ -110,6 +110,9 @@ namespace Database_Project
             }
         }
 
-       
+        private void updateForm_Load(object sender, EventArgs e)
+        {
+            err.Text = "";
+        }
     }
 }

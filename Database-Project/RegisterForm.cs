@@ -108,5 +108,10 @@ namespace Database_Project
 				return;
 			}
 		}
-	}
+
+        private void RegisterForm_Load(object sender, EventArgs e)
+        {
+            err_label.Text= "";
+        }
+    }
 }

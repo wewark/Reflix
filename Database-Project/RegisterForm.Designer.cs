@@ -180,10 +180,11 @@
             // 
             this.err_label.AutoSize = true;
             this.err_label.ForeColor = System.Drawing.Color.Red;
-            this.err_label.Location = new System.Drawing.Point(48, 221);
+            this.err_label.Location = new System.Drawing.Point(41, 262);
             this.err_label.Name = "err_label";
-            this.err_label.Size = new System.Drawing.Size(0, 13);
+            this.err_label.Size = new System.Drawing.Size(29, 13);
             this.err_label.TabIndex = 1;
+            this.err_label.Text = "Error";
             this.err_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // RegisterForm
@@ -210,6 +211,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "RegisterForm";
             this.Text = "RegisterForm";
+            this.Load += new System.EventHandler(this.RegisterForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

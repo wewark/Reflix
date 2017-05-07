@@ -179,11 +179,13 @@
             // err
             // 
             this.err.AutoSize = true;
-            this.err.ForeColor = System.Drawing.Color.DarkRed;
-            this.err.Location = new System.Drawing.Point(57, 275);
+            this.err.ForeColor = System.Drawing.Color.Red;
+            this.err.Location = new System.Drawing.Point(56, 283);
             this.err.Name = "err";
-            this.err.Size = new System.Drawing.Size(0, 13);
+            this.err.Size = new System.Drawing.Size(29, 13);
             this.err.TabIndex = 23;
+            this.err.Text = "Error";
+            this.err.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // updateForm
             // 
@@ -209,6 +211,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "updateForm";
             this.Text = "updateForm";
+            this.Load += new System.EventHandler(this.updateForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

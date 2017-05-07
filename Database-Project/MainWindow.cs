@@ -47,5 +47,11 @@ namespace Database_Project
             ReturnForm ret = new ReturnForm();
             ret.Show();
         }
+
+        private void Credits_button_Click(object sender, EventArgs e)
+        {
+            Credits Cred = new Credits();
+            Cred.Show();
+        }
     }
 }

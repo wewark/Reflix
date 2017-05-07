@@ -51,7 +51,7 @@ namespace Database_Project
                 Session.userlastname = users[0]["user_lastname"].ToString();
                 Session.email = users[0]["user_email"].ToString();
                 Session.creditcard = users[0]["user_creditcard"].ToString();
-				//Session.userBalance = (double)users[0]["user_balance"];
+				Session.userBalance = (double)users[0]["user_balance"];
 
 				// Hide login window
 				Hide();
@@ -86,7 +86,39 @@ namespace Database_Project
 
         private void admin_button_Click(object sender, EventArgs e)
         {
+            List<Dictionary<string, object>> admins = SQL.ReadQuery($"SELECT * FROM ADMIN WHERE admin_username = '{username_textBox.Text}'");
 
+            err_label.Text = "";
+            // If user not found
+            if (admins.Count == 0)
+            {
+                err_label.Text = "Wrong username";
+            }
+            // If wrong password
+            else if (admins[0]["admin_password"].ToString() != password_textBox.Text)
+            {
+                err_label.Text = "Wrong password";
+            }
+            // Everything good
+            else
+            {
+                Session.adminID = (int)admins[0]["admin_id"];
+                Session.adminFirstName = admins[0]["admin_firstname"].ToString();
+                
+
+                // Hide login window
+                Hide();
+
+                // Load MainWindow
+               AdminWindow admin = new AdminWindow();
+
+                // This line tells MainWindow to close the current window (login window)
+                // with it when it closes, otherwise the application will keep running in
+                // the background with the login window hidden
+                admin.FormClosed += (s, args) => Close();
+
+                admin.Show();
+            }
         }
     }
 }

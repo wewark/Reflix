@@ -28,9 +28,18 @@ namespace Global
 
         public static string creditcard { get; set; }
 		public static double userBalance { get; set; }
-	}
 
-	class SQL
+        public static int adminID { get; set; }
+
+        public static string adminFirstName { get; set; }
+
+
+
+
+
+    }
+
+    class SQL
 	{
 		static public void ChangeQuery(string query)
 		{

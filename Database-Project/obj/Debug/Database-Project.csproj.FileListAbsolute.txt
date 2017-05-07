@@ -29,3 +29,5 @@ E:\Projects\Database-Project\Database-Project\bin\Debug\MySql.Data.dll
 C:\Users\Refaie\Documents\GitHub\Database-Project\Database-Project\bin\Debug\MySql.Data.dll
 C:\Users\Refaie\Documents\GitHub\Database-Project\Database-Project\obj\Debug\Database_Project.ViewForm.resources
 C:\Users\Refaie\Documents\GitHub\Database-Project\Database-Project\obj\Debug\Database_Project.ReturnForm.resources
+C:\Users\Refaie\Documents\GitHub\Database-Project\Database-Project\obj\Debug\Database_Project.AdminWindow.resources
+C:\Users\Refaie\Documents\GitHub\Database-Project\Database-Project\obj\Debug\Database_Project.Credits.resources

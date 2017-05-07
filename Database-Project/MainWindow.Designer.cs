@@ -34,7 +34,7 @@
             this.update_button = new System.Windows.Forms.Button();
             this.view_button = new System.Windows.Forms.Button();
             this.return_button = new System.Windows.Forms.Button();
-            this.extend_button = new System.Windows.Forms.Button();
+            this.Credits_button = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -89,14 +89,15 @@
             this.return_button.UseVisualStyleBackColor = true;
             this.return_button.Click += new System.EventHandler(this.return_button_Click);
             // 
-            // extend_button
+            // Credits_button
             // 
-            this.extend_button.Location = new System.Drawing.Point(101, 169);
-            this.extend_button.Name = "extend_button";
-            this.extend_button.Size = new System.Drawing.Size(108, 40);
-            this.extend_button.TabIndex = 6;
-            this.extend_button.Text = "Extend ";
-            this.extend_button.UseVisualStyleBackColor = true;
+            this.Credits_button.Location = new System.Drawing.Point(101, 169);
+            this.Credits_button.Name = "Credits_button";
+            this.Credits_button.Size = new System.Drawing.Size(108, 40);
+            this.Credits_button.TabIndex = 6;
+            this.Credits_button.Text = "Credits";
+            this.Credits_button.UseVisualStyleBackColor = true;
+            this.Credits_button.Click += new System.EventHandler(this.Credits_button_Click);
             // 
             // pictureBox1
             // 
@@ -113,7 +114,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(305, 324);
-            this.Controls.Add(this.extend_button);
+            this.Controls.Add(this.Credits_button);
             this.Controls.Add(this.return_button);
             this.Controls.Add(this.view_button);
             this.Controls.Add(this.update_button);
@@ -137,7 +138,7 @@
         private System.Windows.Forms.Button update_button;
         private System.Windows.Forms.Button view_button;
         private System.Windows.Forms.Button return_button;
-        private System.Windows.Forms.Button extend_button;
+        private System.Windows.Forms.Button Credits_button;
         private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
