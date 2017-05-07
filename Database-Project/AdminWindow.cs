@@ -23,6 +23,10 @@ namespace Database_Project
             view.Show();
         }
 
-        
-    }
+		private void button1_Click(object sender, EventArgs e)
+		{
+			AddMovieForm movieForm = new AddMovieForm();
+			movieForm.Show();
+		}
+	}
 }

@@ -31,3 +31,11 @@ C:\Users\Refaie\Documents\GitHub\Database-Project\Database-Project\obj\Debug\Dat
 C:\Users\Refaie\Documents\GitHub\Database-Project\Database-Project\obj\Debug\Database_Project.ReturnForm.resources
 C:\Users\Refaie\Documents\GitHub\Database-Project\Database-Project\obj\Debug\Database_Project.AdminWindow.resources
 C:\Users\Refaie\Documents\GitHub\Database-Project\Database-Project\obj\Debug\Database_Project.Credits.resources
+E:\Projects\Database-Project\Database-Project\obj\Debug\Database_Project.AddMovieForm.resources
+E:\Projects\Database-Project\Database-Project\obj\Debug\Database_Project.AdminWindow.resources
+E:\Projects\Database-Project\Database-Project\obj\Debug\Database_Project.Credits.resources
+E:\Projects\Database-Project\Database-Project\obj\Debug\Database_Project.HistoryForm.resources
+E:\Projects\Database-Project\Database-Project\obj\Debug\Database_Project.rentForm.resources
+E:\Projects\Database-Project\Database-Project\obj\Debug\Database_Project.ReturnForm.resources
+E:\Projects\Database-Project\Database-Project\obj\Debug\Database_Project.updateForm.resources
+E:\Projects\Database-Project\Database-Project\obj\Debug\Database_Project.ViewForm.resources

@@ -29,7 +29,7 @@ namespace Database_Project
                         Where MOVIE.movie_id = 
                       ( select RENT.movie_id
                         from RENT
-                        Where RENT.user_id = '{Session.userID}' )
+                        Where RENT.user_id = {Session.userID} )
                     ");
 
             // Show results in the table

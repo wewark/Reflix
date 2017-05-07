@@ -17,27 +17,17 @@ namespace Global
 	{
 		public static int userID { get; set; }
 		public static string userFirstName { get; set; }
-
-        public static string username { get; set; }
-
-        public static string password { get; set; }
-
-        public static string userlastname { get; set; }
-
-        public static string email { get; set; }
-
-        public static string creditcard { get; set; }
 		public static double userBalance { get; set; }
 
         public static int adminID { get; set; }
 
         public static string adminFirstName { get; set; }
-
-
-
-
-
-    }
+		public static string username { get; internal set; }
+		public static string password { get; internal set; }
+		public static string userlastname { get; internal set; }
+		public static string email { get; internal set; }
+		public static string creditcard { get; internal set; }
+	}
 
     class SQL
 	{

@@ -53,5 +53,11 @@ namespace Database_Project
             Credits Cred = new Credits();
             Cred.Show();
         }
-    }
+
+		private void history_button_Click(object sender, EventArgs e)
+		{
+			HistoryForm history = new HistoryForm();
+			history.Show();
+		}
+	}
 }

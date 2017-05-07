@@ -42,7 +42,7 @@ namespace Database_Project
 					actor_name like '%{searchQuery}%' or
 					director_name like '%{searchQuery}%'
 			");
-			
+
 			// Show results in the table
 			foreach (var movie in movies)
 			{
@@ -69,21 +69,40 @@ namespace Database_Project
 		}
 		private void rentMovie(Dictionary<string, object> movie)
 		{
-			// Add the operation to RENT relation
-			SQL.ChangeQuery($@"insert into RENT values
-				({Session.userID}, {movie["movie_id"]}, {DateTime.Now.ToString("yyyy-MM-dd")}, {DateTime.Now.AddMonths(1).ToString("yyyy-MM-dd")})");
+			var rented = SQL.ReadQuery($@"select * from RENT where movie_id = {movie["movie_id"]} and user_id = {Session.userID}");
+			if (Session.userBalance >= (double)movie["movie_pricepermonth"])
+			{
+				// If the user has rented this movie before, extend the rental by 1 month
+				if (rented.Count > 0)
+				{
+					SQL.ChangeQuery($@"update RENT
+					set end_date = {Convert.ToDateTime(rented[0]["end_date"]).AddMonths(1).ToString("yyyy-MM-dd")}
+					where movie_id = {movie["movie_id"]} and user_id = {Session.userID}");
+				}
+				else
+				{
+					// Add the operation to RENT relation
+					SQL.ChangeQuery($@"insert into RENT values
+						({Session.userID}, {movie["movie_id"]}, {DateTime.Now.ToString("yyyy-MM-dd")}, {DateTime.Now.AddMonths(1).ToString("yyyy-MM-dd")})");
+				}
 
-            if (Session.userBalance >= (double)movie["movie_pricepermonth"])
-            {
-                // Take the money
-                Session.userBalance -= (double)movie["movie_pricepermonth"];
-                SQL.ChangeQuery($@"update USERS set user_balance = {Session.userBalance} where user_id = {Session.userID}");
-            }
+				// Take the money
+				Session.userBalance -= (double)movie["movie_pricepermonth"];
+				SQL.ChangeQuery($@"update USERS set user_balance = {Session.userBalance} where user_id = {Session.userID}");
+			}
+			else
+			{
+				balance_err.Text = "You can't rent this movie , your balance is not enough";
+			}
+		}
 
-            else
-            {
-                balance_err.Text ="You can't rent this movie , your balance is not enough";
-            }
+		private void search_textBox_KeyDown(object sender, KeyEventArgs e)
+		{
+			// If the pressed key is Enter
+			if (e.KeyCode == Keys.Enter)
+			{
+				search_button_Click(this, new EventArgs());
+			}
 		}
 	}
 }

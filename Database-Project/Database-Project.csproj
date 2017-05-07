@@ -49,6 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddMovieForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddMovieForm.Designer.cs">
+      <DependentUpon>AddMovieForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdminWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +72,12 @@
     </Compile>
     <Compile Include="ExtendForm.Designer.cs">
       <DependentUpon>ExtendForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HistoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HistoryForm.Designer.cs">
+      <DependentUpon>HistoryForm.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
@@ -128,11 +140,17 @@
     <Compile Include="ViewForm.Designer.cs">
       <DependentUpon>ViewForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddMovieForm.resx">
+      <DependentUpon>AddMovieForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AdminWindow.resx">
       <DependentUpon>AdminWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Credits.resx">
       <DependentUpon>Credits.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HistoryForm.resx">
+      <DependentUpon>HistoryForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
